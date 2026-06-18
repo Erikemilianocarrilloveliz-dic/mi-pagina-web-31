@@ -1,0 +1,343 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME ZONE</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#111;
+            color:white;
+        }
+
+        #carrito{
+            position:fixed;
+            top:10px;
+            right:10px;
+            background:#ff6600;
+            padding:10px;
+            border-radius:10px;
+            z-index:1000;
+        }
+
+        header{
+            background:#1a1a1a;
+            text-align:center;
+            padding:20px;
+        }
+
+        header img{
+            width:120px;
+        }
+
+        nav{
+            margin-top:15px;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:10px;
+            padding:8px 12px;
+            background:#333;
+            border-radius:5px;
+        }
+
+        nav a:hover{
+            background:#ff6600;
+        }
+
+        .banner{
+            text-align:center;
+            padding:60px 20px;
+            background:url("https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop");
+            background-size:cover;
+        }
+
+        .banner h2{
+            font-size:40px;
+        }
+
+        .introduccion,
+        .info,
+        .video,
+        .marco,
+        .contacto{
+            padding:40px;
+            text-align:center;
+        }
+
+        .contenido{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+            padding:40px;
+        }
+
+        .card{
+            background:#222;
+            width:300px;
+            border-radius:10px;
+            overflow:hidden;
+            box-shadow:0 0 10px black;
+        }
+
+        .card img{
+            width:100%;
+            height:200px;
+            object-fit:cover;
+        }
+
+        .card h3,
+        .card p{
+            padding:10px;
+        }
+
+        button{
+            margin:10px;
+            padding:10px 20px;
+            border:none;
+            background:#ff6600;
+            color:white;
+            cursor:pointer;
+            border-radius:5px;
+        }
+
+        form{
+            max-width:500px;
+            margin:auto;
+        }
+
+        input,
+        textarea{
+            width:100%;
+            padding:10px;
+            margin-top:5px;
+            margin-bottom:15px;
+        }
+
+        footer{
+            background:#1a1a1a;
+            text-align:center;
+            padding:20px;
+        }
+
+        iframe{
+            border:none;
+        }
+
+        .logo{
+            width:150px;
+            margin-bottom:10px;
+        }
+
+        .slogan{
+            color:#ff6600;
+            font-size:20px;
+            margin-top:10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- AUDIO -->
+    <audio autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- CARRITO -->
+    <div id="carrito">
+        🛒 Carrito: <span id="contador">0</span>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+
+        <img class="logo"
+            src="https://cdn-icons-png.flaticon.com/512/686/686589.png"
+            alt="Logo Game Zone">
+
+        <h1>GAME ZONE</h1>
+
+        <p class="slogan">
+            Donde la diversión nunca termina
+        </p>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="topjuegos.html">Top Juegos</a>
+            <a href="compras.html">Tienda</a>
+            <a href="videos.html">Videos</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="login.html">Login</a>
+            <a href="https://store.steampowered.com/" target="_blank">Steam</a>
+        </nav>
+
+    </header>
+
+    <!-- BANNER -->
+    <section class="banner">
+
+        <h2>BIENVENIDO A GAME ZONE</h2>
+
+        <p>
+            Compra videojuegos, mira trailers y descubre lo mejor del gaming.
+        </p>
+
+    </section>
+
+    <!-- INTRODUCCIÓN -->
+    <section class="introduccion">
+
+        <h2>¿Quiénes somos?</h2>
+
+        <br>
+
+        <p>
+            GAME ZONE es una plataforma dedicada al mundo de los videojuegos.
+            Nuestro objetivo es ofrecer a los usuarios un espacio donde puedan
+            descubrir nuevos títulos, conocer los juegos más populares, ver
+            trailers, comprar videojuegos y mantenerse informados sobre las
+            últimas tendencias del entretenimiento digital.
+        </p>
+
+    </section>
+
+    <!-- INFORMACIÓN -->
+    <section class="info">
+
+        <h2>¿Qué encontrarás en GAME ZONE?</h2>
+
+        <br>
+
+        <ul>
+            <li>Top de videojuegos más populares.</li>
+            <li>Tienda virtual de juegos.</li>
+            <li>Videos y trailers.</li>
+            <li>Noticias gamer.</li>
+            <li>Formulario de contacto.</li>
+            <li>Enlaces a plataformas de videojuegos.</li>
+        </ul>
+
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="contenido">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop">
+
+            <h3>Call of Duty</h3>
+
+            <p>Acción extrema online.</p>
+
+            <button onclick="agregar()">Agregar al carrito</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop">
+
+            <h3>FIFA 26</h3>
+
+            <p>El mejor fútbol del mundo.</p>
+
+            <button onclick="agregar()">Agregar al carrito</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=1200&auto=format&fit=crop">
+
+            <h3>GTA VI</h3>
+
+            <p>El juego más esperado.</p>
+
+            <button onclick="agregar()">Agregar al carrito</button>
+        </div>
+
+    </section>
+
+    <!-- VIDEO -->
+    <section class="video">
+
+        <h2>Trailer Gamer</h2>
+
+        <br>
+
+        <video width="700" controls>
+            <source src="video.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+
+    </section>
+
+    <!-- MARCO -->
+    <section class="marco">
+
+        <h2>Visita Steam</h2>
+
+        <br>
+
+        <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            width="700"
+            height="400">
+        </iframe>
+
+    </section>
+
+    <!-- FORMULARIO -->
+    <section class="contacto">
+
+        <h2>Contáctanos</h2>
+
+        <br>
+
+        <form>
+
+            <label>Nombre:</label>
+            <input type="text" required>
+
+            <label>Correo:</label>
+            <input type="email" required>
+
+            <label>Mensaje:</label>
+            <textarea rows="5"></textarea>
+
+            <button type="submit">Enviar</button>
+
+        </form>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 GAME ZONE - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+
+        let contador = 0;
+
+        function agregar() {
+            contador++;
+            document.getElementById("contador").innerHTML = contador;
+            alert("Producto agregado al carrito");
+        }
+
+    </script>
+
+</body>
+</html>
+```
